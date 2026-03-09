@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class ElectricityBill {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // Input: Number of units
+        System.out.print("Enter units consumed: ");
+        int units = input.nextInt();
+        
+        int totalBill = 0;
+
+        if (units <= 100) {
+            // Case 1: Only the first tier
+            totalBill = units * 2;
+        } 
+        else if (units <= 200) {
+            // Case 2: First 100 units + remaining units in second tier
+            totalBill = (100 * 2) + (units - 100) * 3;
+        } 
+        else {
+            // Case 3: First 100 units + Next 100 units + remaining in third tier
+            int firstTier = 100 * 2;       // ₹200
+            int secondTier = 100 * 3;      // ₹300
+            int thirdTier = (units - 200) * 5; // (250-200) * 5 = ₹250
+            
+            totalBill = firstTier + secondTier + thirdTier;
+        }
+
+        // Output the result
+        System.out.println("Total Bill Amount: " + totalBill);
+        
+        input.close();
+    }
+}
