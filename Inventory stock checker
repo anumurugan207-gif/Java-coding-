@@ -1,0 +1,28 @@
+public class InventoryChecker {
+    public static void main(String[] args) {
+        // Input Data
+        int[] stock = {20, 5, 15, 3, 8};
+        int R = 10;
+        
+        // Calling the function to get the count
+        int lowStockCount = countLowStock(stock, R);
+        
+        // Output the result
+        System.out.println(lowStockCount);
+    }
+
+    /**
+     * Counts items where stock[i] < R
+     */
+    public static int countLowStock(int[] stock, int R) {
+        int count = 0;
+        
+        for (int item : stock) {
+            if (item < R) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
