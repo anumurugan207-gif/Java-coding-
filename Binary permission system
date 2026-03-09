@@ -1,0 +1,15 @@
+public class PermissionSystem {
+    public static void main(String[] args) {
+        int permission = 6; // Example Input
+
+        // Permission bitmask values
+        int READ = 4;    // Binary: 100
+        int WRITE = 2;   // Binary: 010
+        int EXECUTE = 1; // Binary: 001
+
+        // Checking each bit using the bitwise AND operator
+        System.out.println("Read: " + ((permission & READ) != 0 ? "Yes" : "No"));
+        System.out.println("Write: " + ((permission & WRITE) != 0 ? "Yes" : "No"));
+        System.out.println("Execute: " + ((permission & EXECUTE) != 0 ? "Yes" : "No"));
+    }
+}
