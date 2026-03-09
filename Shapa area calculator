@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+abstract class Shape {
+    // Abstract method: Every shape must have an area, 
+    // but the formula depends on the specific shape.
+    abstract double area();
+}
+
+class Rectangle extends Shape {
+    double length, breadth;
+
+    Rectangle(double l, double b) {
+        this.length = l;
+        this.breadth = b;
+    }
+
+    @Override
+    double area() {
+        return length * breadth;
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double r) {
+        this.radius = r;
+    }
+
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class AreaCalculator {
+    public static void main(String[] args) {
+        // Simulating the user choice "Rectangle" with length 5 and breadth 4
+        String choice = "Rectangle";
+        double l = 5, b = 4;
+
+        Shape myShape;
+
+        if (choice.equalsIgnoreCase("Rectangle")) {
+            myShape = new Rectangle(l, b);
+        } else {
+            myShape = new Circle(3); // Example radius
+        }
+
+        // Polymorphism in action: myShape calls the correct area() 
+        // regardless of whether it's a Rectangle or Circle.
+        System.out.println((int)myShape.area());
+    }
+}
