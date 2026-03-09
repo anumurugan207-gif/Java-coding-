@@ -1,0 +1,28 @@
+class Employee {
+    int empId;
+    double basicSalary;
+
+    // Constructor
+    public Employee(int empId, double basicSalary) {
+        this.empId = empId;
+        this.basicSalary = basicSalary;
+    }
+
+    // Method to calculate and return Gross Salary
+    public double calculateGrossSalary() {
+        double hra = 0.20 * basicSalary; // 20% HRA
+        double da = 0.10 * basicSalary;  // 10% DA
+        return basicSalary + hra + da;
+    }
+
+    public static void main(String[] args) {
+        // Input: basicSalary = 20000
+        Employee emp = new Employee(101, 20000);
+
+        // Calculate and Print Output
+        double gross = emp.calculateGrossSalary();
+        
+        // Printing as an integer to match your expected output format
+        System.out.println((int)gross);
+    }
+}
