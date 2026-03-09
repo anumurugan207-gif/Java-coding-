@@ -1,0 +1,33 @@
+class Cart {
+    double itemPrice;
+    int quantity;
+
+    // Constructor
+    public Cart(double itemPrice, int quantity) {
+        this.itemPrice = itemPrice;
+        this.quantity = quantity;
+    }
+
+    // Method to calculate total cost with conditional discount
+    public double calculateTotal() {
+        double total = itemPrice * quantity;
+
+        // Apply 10% discount if total exceeds 5000
+        if (total > 5000) {
+            total = total - (0.10 * total);
+        }
+
+        return total;
+    }
+
+    public static void main(String[] args) {
+        // Input: itemPrice = 1200, quantity = 5
+        Cart myCart = new Cart(1200, 5);
+
+        // Calculate and Print Output
+        double finalPrice = myCart.calculateTotal();
+        
+        // Printing as an integer to match your expected output
+        System.out.println((int)finalPrice);
+    }
+}
