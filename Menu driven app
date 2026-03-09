@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class MenuApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
+
+        System.out.println("Welcome to the Java Menu App!");
+
+        while (running) {
+            // Displaying the menu
+            System.out.println("\n--- MAIN MENU ---");
+            System.out.println("1. Say Hello");
+            System.out.println("2. Add Two Numbers");
+            System.out.println("3. Check Even or Odd");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+
+            // Read user input
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Result: Hello there! Hope you're having a great day.");
+                    break;
+
+                case 2:
+                    System.out.print("Enter first number: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Enter second number: ");
+                    double num2 = scanner.nextDouble();
+                    System.out.println("Result: " + (num1 + num2));
+                    break;
+
+                case 3:
+                    System.out.print("Enter a number: ");
+                    int num = scanner.nextInt();
+                    if (num % 2 == 0) {
+                        System.out.println("Result: " + num + " is Even.");
+                    } else {
+                        System.out.println("Result: " + num + " is Odd.");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Exiting the program. Goodbye!");
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again (1-4).");
+            }
+        }
+        scanner.close();
+    }
+}
