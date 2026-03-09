@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        // Input values
+        int balance = 5000;
+        int withdrawAmount = 1200;
+
+        // Logic: Check if multiple of 100 AND if balance is sufficient
+        if (withdrawAmount % 100 == 0 && withdrawAmount <= balance) {
+            System.out.println("Transaction Successful");
+        } else {
+            System.out.println("Transaction Failed");
+        }
+    }
+}
