@@ -1,0 +1,40 @@
+class Book {
+    int bookId;
+    String title;
+    boolean isIssued;
+
+    // Constructor
+    public Book(int bookId, String title, boolean isIssued) {
+        this.bookId = bookId;
+        this.title = title;
+        this.isIssued = isIssued;
+    }
+
+    // Method to issue the book
+    public void issueBook() {
+        if (!isIssued) {
+            isIssued = true;
+            System.out.println("Book Issued");
+        } else {
+            System.out.println("Book is already issued.");
+        }
+    }
+
+    // Method to return the book
+    public void returnBook() {
+        if (isIssued) {
+            isIssued = false;
+            System.out.println("Book Returned");
+        } else {
+            System.out.println("Book was not issued.");
+        }
+    }
+
+    public static void main(String[] args) {
+        // Initial state: isIssued = false
+        Book myBook = new Book(101, "Java Programming", false);
+
+        // Operation: issue
+        myBook.issueBook();
+    }
+}
